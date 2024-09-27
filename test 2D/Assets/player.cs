@@ -6,6 +6,11 @@ public class player : MonoBehaviour
 {
     public BoxCollider2D box;
     public Rigidbody2D rb;
+    public float jump;
+    public bool floortouch;
+    public Animator animator;
+    public float xvel;
+
     
 
     // Start is called before the first frame update
@@ -13,30 +18,46 @@ public class player : MonoBehaviour
     {
         // box.enabled = false;
         box = this.gameObject.GetComponent<BoxCollider2D>();
-
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
+ 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector2.right * 1 * Time.deltaTime);
+            transform.Translate(Vector2.left * xvel * Time.deltaTime);
+            animator.SetBool("walkR", true);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKey(KeyCode.D))
         {
-            rb.position = new Vector2(transform.position.x - 1, transform.position.y);
+            transform.Translate(Vector2.right * xvel * Time.deltaTime);
+            animator.SetBool("walkL", true);
         }
+        else
+        {
+            animator.SetBool("walkL", false);
+            animator.SetBool("walkR", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && floortouch) 
+        {
+            rb.AddForce(Vector2.up * jump);
+            floortouch = false;
+        }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-        Debug.Log("ouch");   
+
         }
-        Debug.Log("Player touched something....");
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+
+        if (collision.gameObject.tag == "Floor")
+        {
+            floortouch = true;
+        }
     }
 }
