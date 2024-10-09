@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class volumeManager : MonoBehaviour
 {
-    public Slider volumeSlider;
+    [SerializeField]
+    Slider volumeSlider;
     void Start()
     {
         if (!PlayerPrefs.HasKey("bgmVolume"))
@@ -19,7 +20,7 @@ public class volumeManager : MonoBehaviour
         }
     }
 
-    void ChangeVolume()
+    public void ChangeVolume()
     {
         AudioListener.volume = volumeSlider.value;
         Save();
