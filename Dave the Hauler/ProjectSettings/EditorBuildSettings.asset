@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/volume.unity
     guid: 5f2e7723534b4ff429fa02f2470174bf
+  - enabled: 1
+    path: Assets/Scenes/lvlSelectionMenu.unity
+    guid: 23762581f6e10f9498b099c248c245d7
   m_configObjects: {}
