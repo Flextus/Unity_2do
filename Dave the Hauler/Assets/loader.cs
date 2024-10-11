@@ -9,4 +9,8 @@ public class loader : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void exitApp()
+    {
+        Application.Quit();
+    }
 }
