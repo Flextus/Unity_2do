@@ -28,14 +28,5 @@ public class loader : MonoBehaviour
         Application.Quit();
     }
 
-    public void lvlcomplete()
-    {
-        // Verificar si la caja ha alcanzado la meta
-        if (boxController != null && boxController.hasReachedMeta)
-        {
-            Debug.Log("Nivel completado!");
-            // Aquí puedes agregar la lógica para cargar la siguiente escena o mostrar un mensaje de nivel completado
-            loadMyScene("mainMenu"); // Reemplaza "NextLevelSceneName" con el nombre de la siguiente escena
-        }
-    }
+
 }

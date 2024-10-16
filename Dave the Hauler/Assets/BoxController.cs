@@ -10,21 +10,9 @@ public class BoxController : MonoBehaviour
     private Transform playerTransform;
 
     public float dragSpeed = 5.0f;
-    private bool _hasReachedMeta = false; // Variable privada para el booleano
 
-    // Propiedad pública para hasReachedMeta con lógica de cambio
-    public bool hasReachedMeta
-    {
-        get { return _hasReachedMeta; }
-        set
-        {
-            if (_hasReachedMeta != value)
-            {
-                _hasReachedMeta = value;
-                Debug.Log("hasReachedMeta: " + _hasReachedMeta);
-            }
-        }
-    }
+    public bool hasReachedMeta = false;
+
 
     void Start()
     {
@@ -33,6 +21,8 @@ public class BoxController : MonoBehaviour
 
     void Update()
     {
+        hasReachedMeta = false;
+
         if (isBeingDragged && playerTransform != null)
         {
             Vector2 direction = (playerTransform.position - transform.position).normalized;
@@ -44,32 +34,21 @@ public class BoxController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            isBeingDragged = true;
-            playerTransform = collision.transform;
-        }
 
-        if (collision.gameObject.CompareTag("meta"))
-        {
-            hasReachedMeta = true;
-
-        }
-    }
 
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            isBeingDragged = false;
-            playerTransform = null;
+            hasReachedMeta = true;
+            Debug.Log("box true");
         }
+        Debug.Log(collision.gameObject.tag);
     }
+
 
     public void sacaui()
     {
-
+        
     }
 }

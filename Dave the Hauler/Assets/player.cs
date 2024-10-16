@@ -6,20 +6,14 @@ public class player : MonoBehaviour
 {
     // Variables para controlar el movimiento
     public float speed = 5.0f;
-    private Animator animator;
+    private Animator walker;
     private Rigidbody2D rb;
-
-    // Booleans para activar animaciones
-    private bool isWalkingRight = false;
-    private bool isWalkingLeft = false;
-    private bool isWalkingUp = false;
-    private bool isWalkingDown = false;
 
     // Start is called before the first frame update
     void Start()
     {
         // Obtener el componente Animator
-        animator = GetComponent<Animator>();
+        walker = GetComponent<Animator>();
         // Obtener el componente Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
     }
@@ -28,10 +22,10 @@ public class player : MonoBehaviour
     void Update()
     {
         // Resetear los booleans de animación
-        isWalkingRight = false;
-        isWalkingLeft = false;
-        isWalkingUp = false;
-        isWalkingDown = false;
+        walker.SetBool("walkingRight", false);
+        walker.SetBool("walkingLeft", false);
+        walker.SetBool("walkingUp", false);
+        walker.SetBool("walkingDown", false);
 
         // Vector de movimiento
         Vector2 movement = Vector2.zero;
@@ -40,37 +34,37 @@ public class player : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             movement.x = speed;
-            isWalkingRight = true;
+            walker.SetBool("walkingRight", true);
         }
 
         // Movimiento en X negativa (izquierda)
         if (Input.GetKey(KeyCode.A))
         {
             movement.x = -speed;
-            isWalkingLeft = true;
+            walker.SetBool("walkingLeft", true);
         }
 
         // Movimiento en Y positiva (arriba)
         if (Input.GetKey(KeyCode.W))
         {
             movement.y = speed;
-            isWalkingUp = true;
+            walker.SetBool("walkingUp", true);
         }
 
         // Movimiento en Y negativa (abajo)
         if (Input.GetKey(KeyCode.S))
         {
             movement.y = -speed;
-            isWalkingDown = true;
+            walker.SetBool("walkingDown", true);
         }
 
         // Actualizar la velocidad del Rigidbody2D
         rb.velocity = movement;
 
         // Actualizar los parámetros del Animator
-        animator.SetBool("isWalkingRight", isWalkingRight);
-        animator.SetBool("isWalkingLeft", isWalkingLeft);
-        animator.SetBool("isWalkingUp", isWalkingUp);
-        animator.SetBool("isWalkingDown", isWalkingDown);
+        walker.SetBool("walkingRight", movement.x > 0);
+        walker.SetBool("walkingLeft", movement.x < 0);
+        walker.SetBool("walkingUp", movement.y > 0);
+        walker.SetBool("walkingDown", movement.y < 0);
     }
 }
