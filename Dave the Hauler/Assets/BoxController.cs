@@ -47,8 +47,4 @@ public class BoxController : MonoBehaviour
     }
 
 
-    public void sacaui()
-    {
-        
-    }
 }
