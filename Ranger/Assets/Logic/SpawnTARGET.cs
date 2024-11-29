@@ -5,7 +5,10 @@ using UnityEngine;
 public class SpawnTARGET : MonoBehaviour
 {
     public GameObject prefabtarget;
+    public float speed = 5f;
     public float intervalo = 5f;
+    public float angulo = 90f;
+    public Rigidbody rb;
 
     private Coroutine spawnCoroutine;
 
@@ -16,11 +19,21 @@ public class SpawnTARGET : MonoBehaviour
         StartCoroutine(stopmuertes(contador.muertes));
     }
 
+    private void Update()
+    {
+        if (rb != null) 
+        {
+            rb.velocity = Vector3.forward * speed;
+        }
+    }
+
     private IEnumerator TargetSpawn()
     {
         while (true)
-        {
-            Instantiate(prefabtarget, transform.position, transform.rotation);
+        {   
+            GameObject diana = Instantiate(prefabtarget, transform.position, Quaternion.Euler(new Vector3(0, 0, 90)));
+            rb = diana.GetComponent<Rigidbody>();
+
             yield return new WaitForSeconds(intervalo);
         }
     }
