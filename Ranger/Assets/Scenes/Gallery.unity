@@ -356,6 +356,7 @@ Transform:
   m_PrefabInstance: {fileID: 1858154736}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &843798258
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +494,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 96b653e9 (001_Benjamin_2711)
 =======
 >>>>>>> parent of 96b653e9 (001_Benjamin_2711)
 --- !u!1 &1007513963
@@ -696,6 +699,7 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1525027181
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +873,8 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 6a58a97b5b6c9a64288be4dff2a67845, type: 3}
 =======
 >>>>>>> parent of 96b653e9 (001_Benjamin_2711)
+=======
+>>>>>>> parent of 96b653e9 (001_Benjamin_2711)
 --- !u!1001 &1858154736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -968,7 +974,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 7.1499996, y: -4.22, z: 12.9}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 96b653e9 (001_Benjamin_2711)
 =======
   m_LocalPosition: {x: 0, y: 0, z: 0}
 >>>>>>> parent of 96b653e9 (001_Benjamin_2711)
@@ -1173,8 +1183,13 @@ Transform:
   m_GameObject: {fileID: 2142459128}
   serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0.88961655, z: -0, w: 0.4567082}
   m_LocalPosition: {x: 7.1499996, y: -4.22, z: 12.9}
+=======
+  m_LocalRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 96b653e9 (001_Benjamin_2711)
 =======
   m_LocalRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1210,11 +1225,14 @@ SceneRoots:
   - {fileID: 2142459130}
   - {fileID: 1306554840}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 1525027185}
   - {fileID: 1172553414}
   - {fileID: 878571377}
   - {fileID: 143487965}
   - {fileID: 1709896403}
   - {fileID: 843798259}
+=======
+>>>>>>> parent of 96b653e9 (001_Benjamin_2711)
 =======
 >>>>>>> parent of 96b653e9 (001_Benjamin_2711)
